@@ -144,3 +144,15 @@ C:\Users\Brett\Desktop\Mastiff\AlphaOne\AlphaOne\bin\Microsoft.Owin.Security.Mic
 C:\Users\Brett\Desktop\Mastiff\AlphaOne\AlphaOne\obj\Debug\AlphaOne.csprojResolveAssemblyReference.cache
 C:\Users\Brett\Desktop\Mastiff\AlphaOne\AlphaOne\obj\Debug\AlphaOne.dll
 C:\Users\Brett\Desktop\Mastiff\AlphaOne\AlphaOne\obj\Debug\AlphaOne.pdb
+C:\Users\Brett\Desktop\Mastiff\AlphaOne\AlphaOne\bin\Moq.dll
+C:\Users\Brett\Desktop\Mastiff\AlphaOne\AlphaOne\bin\nunit.framework.dll
+C:\Users\Brett\Desktop\Mastiff\AlphaOne\AlphaOne\bin\Moq.xml
+C:\Users\Brett\Desktop\Mastiff\AlphaOne\AlphaOne\bin\nunit.framework.xml
+C:\Users\Brett\Desktop\Mastiff\AlphaOne\AlphaOne\bin\Simple.Mocking.dll
+C:\Users\Brett\Desktop\Mastiff\AlphaOne\AlphaOne\bin\TestDrivenDesign.dll
+C:\Users\Brett\Desktop\Mastiff\AlphaOne\AlphaOne\bin\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Brett\Desktop\Mastiff\AlphaOne\AlphaOne\bin\Simple.Mocking.pdb
+C:\Users\Brett\Desktop\Mastiff\AlphaOne\AlphaOne\bin\nunit.core.dll
+C:\Users\Brett\Desktop\Mastiff\AlphaOne\AlphaOne\bin\nunit.core.interfaces.dll
+C:\Users\Brett\Desktop\Mastiff\AlphaOne\AlphaOne\bin\nunit.util.dll
+C:\Users\Brett\Desktop\Mastiff\AlphaOne\AlphaOne\bin\NUnit.VisualStudio.TestAdapter.dll
