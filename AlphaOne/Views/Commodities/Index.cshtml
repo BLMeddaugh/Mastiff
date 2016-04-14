@@ -5,12 +5,11 @@
 }
 
 <h2>Oil Prices
-    @*refresh content every ten seconds*@
+    @*refresh content every 30 seconds*@
     <head runat="server">
         <title>Meta Tags Example</title>
-        <meta http-equiv="Refresh" content="10" />
+        <meta http-equiv="Refresh" content="30" />
     </head>
-
     </h2>
 
 
@@ -28,8 +27,8 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model.Reverse()) {
-    <tr>
+@foreach (var item in Model.Reverse().Take(1)) {
+       <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Type)
         </td>
@@ -39,12 +38,8 @@
         <td>
             @Html.DisplayFor(modelItem => item.Date)
         </td>
-        <td>
-@*            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-*@        </td>
     </tr>
+   
 }
 
 </table>

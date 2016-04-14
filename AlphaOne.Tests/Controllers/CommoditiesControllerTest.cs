@@ -1,23 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Mvc;
-using NUnit.Framework;
-using Moq;
-using AlphaOne;
-using AlphaOne.Models;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using HtmlAgilityPack;
-
+using AlphaOne.Models;
 
 namespace AlphaOne.Tests.Controllers
 {
-    [TestFixture]
-    class CommoditiesControllerTest
+    [TestClass]
+    public class CommoditiesControllerTest
     {
-        [TestCase]
-        public void testCommodityPriceSetting()
+        [TestMethod]
+        public void TestMethod1()
         {
             HtmlWeb webget = new HtmlWeb();
             HtmlDocument document = webget.Load("http://finance.yahoo.com/q?s=clk16.nym");
@@ -28,9 +20,5 @@ namespace AlphaOne.Tests.Controllers
             commodity.Price = float.Parse(price);
             Assert.IsNotNull(commodity.Price);
         }
-       
-        
-        
-
     }
 }
