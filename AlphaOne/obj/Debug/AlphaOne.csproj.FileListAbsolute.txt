@@ -156,3 +156,9 @@ C:\Users\Brett\Desktop\Mastiff\AlphaOne\AlphaOne\bin\nunit.core.dll
 C:\Users\Brett\Desktop\Mastiff\AlphaOne\AlphaOne\bin\nunit.core.interfaces.dll
 C:\Users\Brett\Desktop\Mastiff\AlphaOne\AlphaOne\bin\nunit.util.dll
 C:\Users\Brett\Desktop\Mastiff\AlphaOne\AlphaOne\bin\NUnit.VisualStudio.TestAdapter.dll
+C:\Users\Brett\Desktop\Mastiff\AlphaOne\AlphaOne\obj\Debug\AlphaOne.Migrations.InitialCreate.resources
+C:\Users\Brett\Desktop\Mastiff\AlphaOne\AlphaOne\obj\Debug\AlphaOne.csproj.GenerateResource.Cache
+C:\Users\Brett\Desktop\Mastiff\AlphaOne\AlphaOne\bin\Fizzler.dll
+C:\Users\Brett\Desktop\Mastiff\AlphaOne\AlphaOne\bin\Fizzler.Systems.HtmlAgilityPack.dll
+C:\Users\Brett\Desktop\Mastiff\AlphaOne\AlphaOne\bin\Fizzler.xml
+C:\Users\Brett\Desktop\Mastiff\AlphaOne\AlphaOne\bin\Fizzler.Systems.HtmlAgilityPack.xml

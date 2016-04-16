@@ -23,11 +23,23 @@ namespace AlphaOne.Models
             HtmlDocument document = webget.Load("http://finance.yahoo.com/q?s=clk16.nym");
             string price = document.DocumentNode.SelectSingleNode("id('yfs_l10_clk16.nym')").InnerHtml;
             string type = "Crude Oil";
-
+            //make oil object
             Commodity commodity = new Commodity();
             commodity.Date = DateTime.Now;
             commodity.Price = float.Parse(price);
             commodity.Type = "Oil";
+            db.Commodities.Add(commodity);
+            //HAP to get soy
+            webget = new HtmlWeb();
+            document = webget.Load("http://finance.yahoo.com/futures?t=grains");
+            price = document.DocumentNode.SelectSingleNode("id('yfs_l10_ck16.cbt')").InnerHtml;
+          
+            //make soy object
+            commodity.Price = float.Parse(price);
+            commodity.Type = "Corn";
+            db.Commodities.Add(commodity);
+
+
             db.Commodities.Add(commodity);
             db.SaveChanges();
             //  return RedirectToAction("Index");
