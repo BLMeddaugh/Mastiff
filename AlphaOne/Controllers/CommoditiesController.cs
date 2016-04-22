@@ -6,6 +6,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 
 namespace AlphaOne.Models
@@ -22,43 +23,38 @@ namespace AlphaOne.Models
             HtmlWeb webget = new HtmlWeb();
             HtmlDocument document = webget.Load("http://finance.yahoo.com/q?s=clk16.nym");
             string price = document.DocumentNode.SelectSingleNode("id('yfs_l10_clk16.nym')").InnerHtml;
-            string type = "Crude Oil";
             //make oil object
-            Commodity commodity = new Commodity();
-            commodity.Date = DateTime.Now;
-            commodity.Price = float.Parse(price);
-            commodity.Type = "Oil";
-            db.Commodities.Add(commodity);
+            Commodity oil = new Commodity();
+            oil.Date = DateTime.Now;
+            oil.Price = float.Parse(price);
+            oil.Type = "Oil";
+            db.Commodities.Add(oil);
+            db.SaveChanges();
+
             //HAP to get soy
             webget = new HtmlWeb();
             document = webget.Load("http://finance.yahoo.com/futures?t=grains");
             price = document.DocumentNode.SelectSingleNode("id('yfs_l10_ck16.cbt')").InnerHtml;
-          
             //make soy object
-            commodity.Price = float.Parse(price);
-            commodity.Type = "Corn";
-            db.Commodities.Add(commodity);
-
-
-            db.Commodities.Add(commodity);
+            Commodity corn = new Commodity();
+            corn.Price = float.Parse(price);
+            corn.Type = "Corn";
+            corn.Date = DateTime.Now;
+            db.Commodities.Add(corn);
             db.SaveChanges();
             //  return RedirectToAction("Index");
             return View(db.Commodities.ToList());
         }
 
+        
+
         // GET: Commodities/Details/5
         public ActionResult Details(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Commodity commodity = db.Commodities.Find(id);
-            if (commodity == null)
-            {
-                return HttpNotFound();
-            }
-            return View(commodity);
+            
+            var com = db.Commodities.Where(x => x.Type == "Oil").ToList();
+            ViewBag.com = db.Commodities.Where(x => x.Type == "Oil").ToList();
+            return View();
         }
 
         // GET: Commodities/Create

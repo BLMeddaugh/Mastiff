@@ -4,42 +4,52 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Oil Prices
-    @*refresh content every 30 seconds*@
-    <head runat="server">
-        <title>Meta Tags Example</title>
-        <meta http-equiv="Refresh" content="30" />
-    </head>
+
+    <h2>
+        Oil Prices
+        @*refresh content every 30 seconds*@
+        <head runat="server">
+            <title>Meta Tags Example</title>
+            <meta http-equiv="Refresh" content="30" />
+        </head>
     </h2>
 
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Type)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Price)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Date)
-        </th>
-        <th></th>
-    </tr>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th></th>
+        </tr>
 
-@foreach (var item in Model.Reverse().Take(2)) {
-       <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Type)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Price)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Date)
-        </td>
-    </tr>
-   
-}
+        @foreach (var item in Model.Reverse().Take(2))
+        {
+            <tr>
+                <td>
+                    @if (Html.DisplayFor(modelItem => item.Type).ToString().
+            Equals("Oil"))
+                    {
+                        <a href="Details">Oils</a> }
+                    @if (Html.DisplayFor(modelItem => item.Type).ToString().
+            Equals("Corn"))
+                    {
+                        <a href="Details">Corn</a> }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+            </tr>
 
-</table>
+        }
+
+    </table>

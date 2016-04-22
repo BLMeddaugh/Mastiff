@@ -11,32 +11,23 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Price)
+            @{ 
+
+
+            var myChart = new Chart(width: 600, height: 400)
+            .AddTitle("Oil Prices")
+            .AddSeries(yFields: "Date")
+            .DataBindTable(dataSource: ViewBag.com, xField: "Price")
+            .Write();
+            }
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Type)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Type)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Date)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Date)
+          
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+
 </p>
