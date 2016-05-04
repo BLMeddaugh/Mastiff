@@ -11,6 +11,7 @@ using System.Web.Mvc;
 
 namespace AlphaOne.Models
 {
+    [Authorize]
     public class CommoditiesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -42,7 +43,18 @@ namespace AlphaOne.Models
             corn.Date = DateTime.Now;
             db.Commodities.Add(corn);
             db.SaveChanges();
-            //  return RedirectToAction("Index");
+
+            //int latest = db.Commodities.LastOrDefault().ID;
+            //int i = 1;
+            //while (db.Commodities.LastOrDefault().Price == db.Commodities.ElementAt(latest - i).Price)
+            //{
+            //    i++;
+            //}
+            //if (db.Commodities.LastOrDefault().Price > db.Commodities.ElementAt(latest - i).Price)
+            //    ViewBag.change = "Up";
+            //else
+            //    ViewBag.change = "Down";
+            ////  return RedirectToAction("Index");
             return View(db.Commodities.ToList());
         }
 
