@@ -5,17 +5,7 @@
 }
 
 
-    <h2>
-        Commodity Prices
-        @*refresh content every 30 seconds*@
-        <head runat="server">
-            <title>Meta Tags Example</title>
-            <meta http-equiv="Refresh" content="30" />
-        </head>
-    </h2>
-
-
-    <table class="table">
+     <table class="table", id="commodities-table">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Type)
@@ -29,7 +19,7 @@
             
         </tr>
 
-        @foreach (var item in Model.Reverse().Take(2))
+        @foreach (var item in Model.Reverse().Take(3).Where(x => x.Type == "Oil" || x.Type == "Corn"))
         {
             <tr>
                 <td>
@@ -54,3 +44,39 @@
         }
 
     </table>
+<table class="table" , id="money-table">
+    <tr>
+        <th>
+            Currency
+        </th>
+        <th>
+            Currency to USD
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model.Reverse().Take(1).Where(x => x.Type == "Rupee"))
+    {
+        <tr>
+            <td>
+                @if (Html.DisplayFor(modelItem => item.Type).ToString().
+            Equals("Rupee"))
+                {
+                    <a href="Details">Rupee</a> }
+
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+        </tr>
+
+    }
+
+</table>

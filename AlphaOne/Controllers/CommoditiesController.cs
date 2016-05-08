@@ -46,6 +46,18 @@ namespace AlphaOne.Models
             db.Commodities.Add(corn);
             db.SaveChanges();
 
+            //HAP to get rupee
+            webget = new HtmlWeb();
+            document = webget.Load("http://finance.yahoo.com/q?s=USDRUB=X");
+            price = document.DocumentNode.SelectSingleNode("id('yfs_l10_usdrub=x')").InnerHtml;
+            //make soy object
+            Commodity rupee = new Commodity();
+            rupee.Price = float.Parse(price);
+            rupee.Type = "Rupee";
+            rupee.Date = DateTime.Now;
+            db.Commodities.Add(rupee);
+            db.SaveChanges();
+
             //int latest = db.Commodities.LastOrDefault().ID;
             //int i = 1;
             //while (db.Commodities.LastOrDefault().Price == db.Commodities.ElementAt(latest - i).Price)
