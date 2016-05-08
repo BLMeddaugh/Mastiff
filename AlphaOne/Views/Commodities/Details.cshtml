@@ -11,21 +11,8 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @{ 
-
-
-            var myChart = new Chart(width: 600, height: 400)
-            .AddTitle("Oil Prices")
-            .AddSeries(yFields: "Date")
-            .DataBindTable(dataSource: ViewBag.com, xField: "Price")
-            .Write();
-            }
+        <img src="@Url.Action("Graph","GraphController"), alt="Price history chart"/>
         </dt>
-
-        <dd>
-          
-        </dd>
-
     </dl>
 </div>
 <p>

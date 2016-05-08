@@ -1,5 +1,6 @@
 ﻿using HtmlAgilityPack;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -31,6 +32,7 @@ namespace AlphaOne.Models
             oil.Type = "Oil";
             db.Commodities.Add(oil);
             db.SaveChanges();
+            System.Threading.Thread.Sleep(100);
 
             //HAP to get soy
             webget = new HtmlWeb();
@@ -65,7 +67,15 @@ namespace AlphaOne.Models
         {
             
             var com = db.Commodities.Where(x => x.Type == "Oil").ToList();
-            ViewBag.com = db.Commodities.Where(x => x.Type == "Oil").ToList();
+            ArrayList prices = new ArrayList();
+            ArrayList dates = new ArrayList();
+            foreach(var Commodity in com)
+            {
+                prices.Add(Commodity.Price);
+                dates.Add(Commodity.Date);
+            }
+            ViewBag.OilPrices = prices;
+            ViewBag.OilDates = dates;
             return View();
         }
 
