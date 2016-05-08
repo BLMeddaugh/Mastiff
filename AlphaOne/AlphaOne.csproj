@@ -231,6 +231,8 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Controllers\CommoditiesController.cs" />
     <Compile Include="Models\Commodity.cs" />
+    <Compile Include="Models\CommodityRepository.cs" />
+    <Compile Include="Models\ICommodityRepository.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -26,11 +26,11 @@
                     @if (Html.DisplayFor(modelItem => item.Type).ToString().
             Equals("Oil"))
                     {
-                        <a href="Details">Oils</a> }
+                        <a href="Details"><abbr title = "per barrel">Oils</abbr></a> }
                     @if (Html.DisplayFor(modelItem => item.Type).ToString().
             Equals("Corn"))
                     {
-                        <a href="Details">Corn</a> }
+                        <a href="Details"><abbr title="per bushel">Corn</abbr></a> }
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Price)

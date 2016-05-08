@@ -15,8 +15,17 @@ namespace AlphaOne.Models
     [Authorize]
     public class CommoditiesController : Controller
     {
+        private ICommodityRepository repository = null;
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        public CommoditiesController()
+        {
+            this.repository = new CommodityRepository();
+        }
+        public CommoditiesController(ICommodityRepository repository)
+        {
+            this.repository = repository;
+        }
         // GET: Commodities
         public ActionResult Index()
         {
@@ -30,8 +39,10 @@ namespace AlphaOne.Models
             oil.Date = DateTime.Now;
             oil.Price = float.Parse(price);
             oil.Type = "Oil";
-            db.Commodities.Add(oil);
-            db.SaveChanges();
+            repository.Insert(oil);
+            
+            //db.Commodities.Add(oil);
+            //db.SaveChanges();
             System.Threading.Thread.Sleep(100);
 
             //HAP to get soy
@@ -43,8 +54,9 @@ namespace AlphaOne.Models
             corn.Price = float.Parse(price);
             corn.Type = "Corn";
             corn.Date = DateTime.Now;
-            db.Commodities.Add(corn);
-            db.SaveChanges();
+            repository.Insert(corn);
+            //db.Commodities.Add(corn);
+            //db.SaveChanges();
 
             //HAP to get rupee
             webget = new HtmlWeb();
@@ -55,8 +67,10 @@ namespace AlphaOne.Models
             rupee.Price = float.Parse(price);
             rupee.Type = "Rupee";
             rupee.Date = DateTime.Now;
-            db.Commodities.Add(rupee);
-            db.SaveChanges();
+            repository.Insert(rupee);
+            repository.Save();
+            //db.Commodities.Add(rupee);
+            //db.SaveChanges();
 
             //int latest = db.Commodities.LastOrDefault().ID;
             //int i = 1;
