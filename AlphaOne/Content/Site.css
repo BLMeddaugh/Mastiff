@@ -1,9 +1,17 @@
 ﻿body {
-    /*background-image:url("../Images/Dogs_At_Gate.jpg");
-    background-repeat:no-repeat;*/
-   
     padding-top: 50px;
     padding-bottom: 20px;
+    background-image:url(/Images/IndexBackground.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+a.navbar-brand{
+    color:black;
+}
+#index-header{
+   float:initial;
+   word-spacing:20em;
+   color:black;
 }
 #commodities-table{
     max-width: 40%;

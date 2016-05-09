@@ -19,7 +19,7 @@
             
         </tr>
 
-        @foreach (var item in Model.Reverse().Take(3).Where(x => x.Type == "Oil" || x.Type == "Corn"))
+        @foreach (var item in Model.Reverse().Take(4).Where(x => x.Type == "Oil" || x.Type == "Corn"))
         {
             <tr>
                 <td>
@@ -58,14 +58,14 @@
 
     </tr>
 
-    @foreach (var item in Model.Reverse().Take(1).Where(x => x.Type == "Rupee"))
+    @foreach (var item in Model.Reverse().Take(4).Where(x => x.Type == "RUP" || x.Type == "BRL"))
     {
         <tr>
             <td>
-                @if (Html.DisplayFor(modelItem => item.Type).ToString().
-            Equals("Rupee"))
-                {
-                    <a href="Details">Rupee</a> }
+                @if (Html.DisplayFor(modelItem => item.Type).ToString().Equals("RUP"))
+                { <a href="Details"><abbr title="India Rupee">RUP</abbr></a> }
+                @if(Html.DisplayFor(modelItem => item.Type).ToString().Equals("BRL"))
+                {<a href="Details"><abbr title="Brazil Real">Real</abbr></a> }
 
             </td>
             <td>
